@@ -1,6 +1,7 @@
 # IntelliJ project files
 .idea
 *.iml
+out
 out/
 gen
 ### Java template
