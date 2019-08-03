@@ -6,14 +6,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-//@WebServlet("/MyServlet")
+//@WebServlet(urlPatterns = "/MyServlet", description = "Мое описание сервлета")
 public class MyServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String receivedFirst = request.getParameter("firstname");
+        String receivedLast = request.getParameter("lastname");
+
+
+        response.setContentType("text/html");
+//        response.setContentType("text/html", charset=utf-8");  //или так
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<h1 style=\"color:darkblue;\">hello</h1>");
+        out.println("<h1 style=\"color:red;\">По-русски - привет! " + receivedFirst + " "  + receivedLast + "</h1>");
+        out.close();
 
     }
 }
