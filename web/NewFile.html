@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Мое Файло</title>
 </head>
 <body>
-<form action="MyServlet">
-    Name<input type="text" name="firstname">
-    Lastname<input type="text" name="lastname">
-    <input type="submit" value="Sent">
+<form method="GET" action="MyServlet">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="firstname"></td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td><input type="text" name="lastname"></td>
+        </tr>
+        <tr>
+            <td>Профессия</td>
+            <td>
+            <select name="job">
+                <option value="Developer">Разработчик</option>
+                <option selected value="Tester">Тестировщик</option>
+                <option value="Analyst">Аналитик</option>
+            </select>
+            </td>
+        </tr>
+    <tr>
+        <td>Пол</td>
+    <td>
+            <input type="radio" name="gender" value="male">Мужчина</input><br>
+            <input type="radio" name="gender" value="female">Женщина</input>
+    </td>
+    </tr>
+    <tr>
+        <td>старше 18 лет?</td>
+        <td>
+            <input type="checkbox" name="age18" value="ДА">Да</input><br>
+        </td>
+    </tr>
+    </td>
 
+
+
+
+            <td align="left" colspan="2"><input type="submit" value="SENT"></td>
+        </tr>
+    </table>
 </form>
-
-<h1>"ПРИВЕТ"</h1>
 </body>
 </html>

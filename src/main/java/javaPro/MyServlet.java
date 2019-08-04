@@ -12,20 +12,38 @@ import java.io.PrintWriter;
 public class MyServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+  //        request.setCharacterEncoding("UTF-8");
+//        String receivedFirst = request.getParameter("firstname");
+//        String receivedLast = request.getParameter("lastname");
+//
+//
+//        response.setContentType("text/html");
+//////        response.setContentType("text/html", charset=utf-8");  //или так
+//        response.setCharacterEncoding("UTF-8");
+//        PrintWriter out = response.getWriter();
+//        out.println("<h1 style=\"color:darkblue;\">hello</h1>");
+//        out.println("<h1 style=\"color:red;\">По-русски - привет! " + receivedFirst + " "  + receivedLast + "</h1>");
+//        out.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String receivedFirst = request.getParameter("firstname");
         String receivedLast = request.getParameter("lastname");
+        String receivedNext = request.getParameter("gender");
+        String receivedAge = request.getParameter("age18");
 
 
         response.setContentType("text/html");
 //        response.setContentType("text/html", charset=utf-8");  //или так
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        out.println("<h1 style=\"color:darkblue;\">hello</h1>");
-        out.println("<h1 style=\"color:red;\">По-русски - привет! " + receivedFirst + " "  + receivedLast + "</h1>");
+
+        out.println("Name: " + receivedFirst + "<br>");
+        out.println("Lastname: " + receivedLast + "<br>");
+        out.println("Gender: " + receivedNext + "<br>");
+        out.println("Age: " + receivedAge + "<br>");
         out.close();
 
     }
