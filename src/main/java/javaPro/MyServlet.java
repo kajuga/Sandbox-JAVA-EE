@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 //@WebServlet(urlPatterns = "/MyServlet", description = "Мое описание сервлета")
 public class MyServlet extends HttpServlet {
@@ -31,7 +32,12 @@ public class MyServlet extends HttpServlet {
 
         String receivedFirst = request.getParameter("firstname");
         String receivedLast = request.getParameter("lastname");
-        String receivedNext = request.getParameter("gender");
+//        String receivedJob = request.getParameter("job");
+        String[] receivedJobs = request.getParameterValues("job");
+        String receivedGender = request.getParameter("gender");
+        if (receivedGender == null) {
+            receivedGender = "-";
+        }
         String receivedAge = request.getParameter("age18");
 
 
@@ -42,7 +48,8 @@ public class MyServlet extends HttpServlet {
 
         out.println("Name: " + receivedFirst + "<br>");
         out.println("Lastname: " + receivedLast + "<br>");
-        out.println("Gender: " + receivedNext + "<br>");
+        out.println("Gender: " + receivedGender + "<br>");
+        out.println("Jobs: " + Arrays.deepToString(receivedJobs) + "<br>");
         out.println("Age: " + receivedAge + "<br>");
         out.close();
 
