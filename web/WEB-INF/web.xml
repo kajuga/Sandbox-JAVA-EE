@@ -13,4 +13,31 @@
         <url-pattern>/MyServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>helloservlet</servlet-name>
+        <servlet-class>JavaOnline.HelloWorld</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Александр</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mname</param-name>
+            <param-value>Александрович</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>helloservlet</servlet-name>
+        <url-pattern>/helloservlet</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
 </web-app>
